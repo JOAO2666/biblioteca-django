@@ -1,18 +1,34 @@
+<<<<<<< HEAD
 # Byte-compiled
+=======
+# Byte-compiled / optimized / DLL files
+>>>>>>> cbee2eaf6fcc7ea040c4ec830cc9ed5a858dd459
 __pycache__/
 *.py[cod]
 *$py.class
 
+<<<<<<< HEAD
 # virtualenv
 venv/
 .venv/
 
 # Django:
+=======
+# Virtual environments
+venv/
+.venv/
+
+# Django stuff:
+>>>>>>> cbee2eaf6fcc7ea040c4ec830cc9ed5a858dd459
 *.log
 *.pot
 db.sqlite3
 media/
 
+<<<<<<< HEAD
 # IDEs
+=======
+# IDEs and editors
+>>>>>>> cbee2eaf6fcc7ea040c4ec830cc9ed5a858dd459
 .idea/
 .vscode/

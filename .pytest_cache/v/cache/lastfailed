@@ -1,0 +1,10 @@
+{
+  "drones/tests.py::DroneCategoryTests::test_filter_drone_category_by_name": true,
+  "drones/tests.py::DroneCategoryTests::test_get_drone_categories_collection": true,
+  "drones/tests.py::DroneCategoryTests::test_get_drone_category": true,
+  "drones/tests.py::DroneCategoryTests::test_post_and_get_drone_category": true,
+  "drones/tests.py::DroneCategoryTests::test_post_existing_drone_category_name": true,
+  "drones/tests.py::DroneCategoryTests::test_update_drone_category": true,
+  "drones/tests.py::PilotTests::test_get_pilot": true,
+  "drones/tests.py::PilotTests::test_post_pilot_without_token": true
+}
