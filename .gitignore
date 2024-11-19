@@ -1,18 +1,18 @@
-# Byte-compiled 
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 
-# virtualenv
+# Virtual environments
 venv/
 .venv/
 
-# Django:
+# Django stuff:
 *.log
 *.pot
 db.sqlite3
 media/
 
-# IDEs
+# IDEs and editors
 .idea/
 .vscode/
