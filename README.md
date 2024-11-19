@@ -40,7 +40,7 @@ O projeto consiste em quatro modelos principais:
 
 1. Clone o repositório:
    ```bash
-   git clone git@github.com:JOAO2666/solu-o-da-atividade.git
+   git clone git@github.com:JOAO2666/biblioteca-django.git
    ```
 
 2. Instale as dependências:
