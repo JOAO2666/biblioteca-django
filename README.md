@@ -16,7 +16,7 @@ Este projeto é uma API RESTful para gerenciamento de livros, implementada usand
 
 ## Estrutura do Projeto
 
-O projeto consiste em três modelos principais:
+O projeto consiste em quatro modelos principais:
 
 1. `Categoria`: Representa as categorias dos livros
 2. `Autor`: Representa os autores dos livros
@@ -60,97 +60,16 @@ O projeto consiste em três modelos principais:
 
 ## Autenticação e Permissões
 
-Este projeto utiliza autenticação baseada em Token com o Django REST Framework Simple JWT. Para configurar:
-
-1. Instale as dependências:
-   ```bash
-   pip install djangorestframework-simplejwt
-   ```
-
-2. Adicione as configurações no `settings.py`:
-   ```python
-   INSTALLED_APPS = [
-       ...
-       'rest_framework',
-       'rest_framework_simplejwt.token_blacklist',
-   ]
-
-   REST_FRAMEWORK = {
-       'DEFAULT_AUTHENTICATION_CLASSES': (
-           'rest_framework_simplejwt.authentication.JWTAuthentication',
-       ),
-   }
-
-   SIMPLE_JWT = {
-       'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
-       'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-       ...
-   }
-   ```
+Este projeto utiliza autenticação baseada em Token com o Django REST Framework Simple JWT. Para configurar, instale o pacote e adicione as configurações necessárias no `settings.py`.
 
 ## Documentação da API
 
-A documentação da API é gerada automaticamente usando o drf-spectacular.
-
-1. Instale o drf-spectacular:
-   ```bash
-   pip install drf-spectacular
-   ```
-
-2. Adicione as configurações no `settings.py`:
-   ```python
-   INSTALLED_APPS = [
-       ...
-       'drf_spectacular',
-   ]
-
-   REST_FRAMEWORK = {
-       ...
-       'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
-   }
-
-   SPECTACULAR_SETTINGS = {
-       'TITLE': 'Book Collection API',
-       'DESCRIPTION': 'API for managing book collections',
-       'VERSION': '1.0.0',
-   }
-   ```
-
-3. Adicione as URLs para a documentação:
-   ```python
-   from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
-
-   urlpatterns = [
-       ...
-       path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
-       path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
-   ]
-   ```
+A documentação da API é gerada automaticamente usando o drf-spectacular. Instale o pacote e adicione as configurações e URLs necessárias.
 
 ## Testes Automatizados
 
-Para garantir a funcionalidade correta, desenvolvemos testes automatizados:
+Para garantir a funcionalidade correta, desenvolvemos testes automatizados. Crie os testes no arquivo `tests.py` e execute-os com:
 
-1. Crie os testes no arquivo `tests.py`:
-   ```python
-   from django.test import TestCase
-   from django.contrib.auth.models import User
-   from .models import Book, Collection
-
-   class CollectionTestCase(TestCase):
-       def setUp(self):
-           self.user = User.objects.create_user(username='testuser', password='12345')
-           self.book = Book.objects.create(title='Test Book', author='Author', published_date='2023-01-01')
-           self.collection = Collection.objects.create(user=self.user, name='Test Collection')
-           self.collection.books.add(self.book)
-
-       def test_collection_creation(self):
-           self.assertEqual(self.collection.name, 'Test Collection')
-           self.assertIn(self.book, self.collection.books.all())
-   ```
-
-2. Execute os testes:
-   ```bash
-   python manage.py test
-   ```
-
+```bash
+python manage.py test
+```
